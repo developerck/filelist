@@ -28,4 +28,4 @@ $plugin->component = 'local_filelist';
 $plugin->version = 2016050900;
 $plugin->requires = 2014051200;
 $plugin->maturity = MATURITY_ALPHA;
-$plugin->release = 'rc 0.1';
+$plugin->release = 'v0.1';
