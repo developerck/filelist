@@ -1,5 +1,28 @@
 <?php
-
+// This file is part of Moodle - http://moodle.org/
+//
+// Moodle is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// Moodle is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+ 
+/**
+ * Library
+ *
+ *
+ * @package    local_filelist
+ * @category   local
+ * @copyright  2016 Chandra Kishor
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
 function local_filelist_extend_navigation(global_navigation $navigation, context $context = null) {
     global $DB, $PAGE;
 
@@ -15,6 +38,27 @@ function local_filelist_extend_navigation(global_navigation $navigation, context
     return true;
 }
 
+function local_filelist_extends_navigation(global_navigation $navigation, context $context = null) {
+    global $DB, $PAGE;
+
+    $nodeproperties = array(
+        'text' => "File List",
+        'shorttext' => "File List",
+        'action' => new moodle_url('/local/filelist/index.php')
+    );
+
+    $integrationnode = new navigation_node($nodeproperties);
+
+    $navigation->add_node($integrationnode);
+    return true;
+}
+/**
+ * Provide File List by course id
+ * 
+ * @global type $DB
+ * @param number $courseid
+ * @return array
+ */
 function local_filelist_file_list($courseid) {
     global $DB;
     $result = array();

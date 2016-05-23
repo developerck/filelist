@@ -23,6 +23,6 @@ MIT
 
 [developerck] @2016
 
-   [Git Repository]: <https://github.com/developerck/filelist.git>
+   [Git Repository]: <https://github.com/developerck/moodle-local_filelist.git>
    [developerck]: <http://develoeprck.com>
  
