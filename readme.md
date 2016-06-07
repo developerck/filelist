@@ -19,7 +19,7 @@ Code is hosted on github
 License
 ----
 
-MIT
+GNU GPL
 
 [developerck] @2016
 
